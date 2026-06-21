@@ -48,7 +48,7 @@ ORDER BY Total_Revenue DESC;
 ### 2. Customer Spending Leaderboard
 Ranks high-value customers by their total spend using the `DENSE_RANK()` window function.
 
-```sql
+sql
 SELECT 
     c.customer_name,
     c.city,
