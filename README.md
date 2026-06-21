@@ -38,6 +38,7 @@ JOIN Products p ON o.product_id = p.product_id
 WHERE o.status LIKE '%Delivered%'
 GROUP BY p.brand
 ORDER BY Total_Revenue DESC;
+```
 
 
 #### 📸 Query Output
@@ -48,7 +49,7 @@ ORDER BY Total_Revenue DESC;
 ### 2. Customer Spending Leaderboard
 Ranks high-value customers by their total spend using the `DENSE_RANK()` window function.
 
-sql
+```sql
 SELECT 
     c.customer_name,
     c.city,
@@ -59,7 +60,7 @@ FROM Orders o
 JOIN Customers c ON o.customer_id = c.customer_id
 WHERE o.status = 'Delivered'
 GROUP BY c.customer_id, c.customer_name, c.city;
-
+```
 #### 📸 Query Output
 ![Customer Spending Board](screenshots/customer_spending.jpg)
 
@@ -68,7 +69,7 @@ GROUP BY c.customer_id, c.customer_name, c.city;
 ### 3. Payment Method & Return Rate Analysis
 Tracks transaction volume across payment methods and calculates the return rate percentage using conditional logic.
 
-sql
+```sql
 SELECT 
     o.payment_method,
     COUNT(o.order_id) AS Total_Orders,
@@ -77,7 +78,7 @@ SELECT
 FROM Orders o
 GROUP BY o.payment_method
 ORDER BY Total_Sales_Amount DESC;
-
+```
 #### 📸 Query Output
 ![Payment Method Analysis](screenshots/payment_analysis.jpg)
 
