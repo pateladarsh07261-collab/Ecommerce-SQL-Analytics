@@ -68,7 +68,7 @@ GROUP BY c.customer_id, c.customer_name, c.city;
 ### 3. Payment Method & Return Rate Analysis
 Tracks transaction volume across payment methods and calculates the return rate percentage using conditional logic.
 
-```sql
+sql
 SELECT 
     o.payment_method,
     COUNT(o.order_id) AS Total_Orders,
